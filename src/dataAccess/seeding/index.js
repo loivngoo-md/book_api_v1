@@ -4,7 +4,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const fetch = require("node-fetch")
 
 async function callAPI() {
-    const data = await fetch("https://www.googleapis.com/books/v1/volumes?q=habbit&key=AIzaSyDRaRJpE2GteOar1xKpOJv-uVa1CqfAzhI&maxResults=40")
+    const data = await fetch("https://www.googleapis.com/books/v1/volumes?q=Classic&key=AIzaSyDRaRJpE2GteOar1xKpOJv-uVa1CqfAzhI&maxResults=40")
     return await data.json()
 }
 
@@ -33,18 +33,15 @@ async function seedDB() {
                     description: value.volumeInfo.description || "",
                     image_path: value.volumeInfo.imageLinks?.thumbnail || "http://books.google.com/books/content?id=L4snAQAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
                     avg_rating: faker.datatype.number(5),
-                    type: value.volumeInfo.categories ? value.volumeInfo.categories.toString() : "Self-Help",
+                    type:  "Classic",
                     count_rating: faker.internet.port(),
-
-
                 }
             })
-
             console.log(res);
 
             await collection.insertMany(res);
 
-            console.log("Database seeded! :)");
+            console.log("Database seeded!");
 
             // perform actions on the collection object
             client.close();
