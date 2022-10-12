@@ -121,14 +121,14 @@ class UserService extends BaseService<UserRepository> {
 
   public create = async (user: CreateUserDTO): Promise<UserDTO> => {
     try {
-      // const isExist = await this._repos.findByUsername(user.username);
+      const isExist = await this._repos.findByEmail(user.emailAddress);
 
-      // if (isExist) {
-      //   throw new ApiError(
-      //     HttpStatusCode.BAD_REQUEST,
-      //     `username is already exist, try again`
-      //   );
-      // }
+      if (isExist) {
+        throw new ApiError(
+          HttpStatusCode.BAD_REQUEST,
+          `Email is already exist, try again`
+        );
+      }
 
       const result: UserDTO = await this._repos.save(user);
 
