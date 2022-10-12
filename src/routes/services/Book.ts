@@ -16,6 +16,8 @@ class BookRouter extends BaseRouter {
     this._router.post("/save", this._controller.save);
     this._router.delete("/delete", this._controller.delete);
     this._router.get("/getAll", this._controller.getAll);
+    this._router.get("/filter", this._controller.findByType);
+
   }
 }
 

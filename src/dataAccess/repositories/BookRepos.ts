@@ -9,9 +9,14 @@ class BookRepository extends BaseRepository<IBook> {
     super("books", BookSchema);
   }
 
+  public findByType = async (type: string) => {
+    const data = await this._model.find({ type })
+    return data
+  }
+
   public getAll = async () => {
     return await this._model.find();
-    
+
     // return await this._model.find({}, "name id");
   };
 

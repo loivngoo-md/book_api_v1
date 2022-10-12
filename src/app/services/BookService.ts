@@ -17,6 +17,17 @@ class BookService extends BaseService<BookRepository> {
         super(new BookRepository());
     }
 
+    public findByType = async (type: string) => {
+        try {
+            return await this._repos.findByType(type)
+        } catch (error) {
+            throw new ApiError(
+                HttpStatusCode.BAD_REQUEST,
+                `error in business logic: ${error}`
+            );
+        }
+    }
+
     public save = async (item: BookDto): Promise<BookDto> => {
         try {
             return await this._repos.save(item);

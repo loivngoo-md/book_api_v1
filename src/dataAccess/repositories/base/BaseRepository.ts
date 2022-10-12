@@ -69,6 +69,7 @@ abstract class BaseRepository<T extends Document> {
     }
   };
 
+
   public findById = async (id: number): Promise<T> => {
     try {
       return await this._model.findOne({ id: id });

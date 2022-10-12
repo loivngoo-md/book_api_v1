@@ -15,6 +15,25 @@ import { ApiResponse } from "../core";
 class BookController {
     private _business: BookService = new BookService();
 
+    public findByType = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const type = req.query?.type as string
+            const key = type.charAt(0).toUpperCase() + type.slice(1);
+            console.log(key);
+
+
+            const result: BookDto[] = await this._business.findByType(key);
+
+            const response: IResponse = {
+                ...ApiResponse,
+                result,
+            };
+            return res.status(HttpStatusCode.OK).json(response);
+        } catch (error) {
+            next(error);
+        }
+    }
+
     public save = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const book: BookDto = req.body;
