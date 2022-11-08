@@ -25,7 +25,7 @@ class ApiRouter extends BaseRouter {
       try {
         return res.status(HttpStatusCode.OK).json({
           status: 200,
-          mode: 1,
+          mode: 2,
         });
       } catch (error) {
         next(error);
