@@ -17,7 +17,7 @@ class ApiRouter extends BaseRouter {
 
     this._router.use("/TokenAuth", new AuthRouter()._router);
 
-    this._router.get("/mode/view", async  (
+    this._router.get("/mode/view", async (
       req: express.Request,
       res: express.Response,
       next: express.NextFunction
@@ -31,6 +31,41 @@ class ApiRouter extends BaseRouter {
         next(error);
       }
     })
+
+      this._router.get("/mode/change", async (
+        req: express.Request,
+        res: express.Response,
+        next: express.NextFunction
+      ) => {
+        try {
+
+          const mode = req.body
+
+          return res.status(HttpStatusCode.OK).json({
+            status: 200,
+            mode: 1,
+          });
+        } catch (error) {
+          next(error);
+        }
+      }),
+
+      this._router.get("/commemts/viewws", async (
+        req: express.Request,
+        res: express.Response,
+        next: express.NextFunction
+      ) => {
+        try {
+
+          const mode = req.body
+
+          return res.status(HttpStatusCode.OK).json({
+            comments: null
+          });
+        } catch (error) {
+          next(error);
+        }
+      })
   }
 }
 
