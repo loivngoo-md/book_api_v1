@@ -50,7 +50,7 @@ class ApiRouter extends BaseRouter {
         }
       }),
 
-      this._router.get("/commemts/viewws", async (
+      this._router.get("/comments/views", async (
         req: express.Request,
         res: express.Response,
         next: express.NextFunction
