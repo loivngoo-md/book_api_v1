@@ -48,8 +48,8 @@ class UserRouter extends BaseRouter {
 
     this._router.delete(
       "/delete",
-      authenticator.authenticate,
-      Authorization.confirm("ADMIN"),
+      // authenticator.authenticate,
+      // Authorization.confirm("ADMIN"),
       this.controller.delete
     );
 
