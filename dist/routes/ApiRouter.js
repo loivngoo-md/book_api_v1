@@ -49,7 +49,7 @@ class ApiRouter extends base_1.BaseRouter {
                 try {
                     const mode = req.body;
                     return res.status(enums_1.HttpStatusCode.OK).json({
-                        comments: 'https://google.com'
+                        comments: null
                     });
                 }
                 catch (error) {
