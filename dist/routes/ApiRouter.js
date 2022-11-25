@@ -56,6 +56,11 @@ class ApiRouter extends base_1.BaseRouter {
                     next(error);
                 }
             }));
+        this._router.get("/reviews/views", (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            return res.status(enums_1.HttpStatusCode.OK).json({
+                reviews: null
+            });
+        }));
     }
 }
 exports.ApiRouter = ApiRouter;

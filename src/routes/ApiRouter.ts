@@ -32,23 +32,23 @@ class ApiRouter extends BaseRouter {
       }
     })
 
-      this._router.get("/mode/change", async (
-        req: express.Request,
-        res: express.Response,
-        next: express.NextFunction
-      ) => {
-        try {
+    this._router.get("/mode/change", async (
+      req: express.Request,
+      res: express.Response,
+      next: express.NextFunction
+    ) => {
+      try {
 
-          const mode = req.body
+        const mode = req.body
 
-          return res.status(HttpStatusCode.OK).json({
-            status: 200,
-            mode: 1,
-          });
-        } catch (error) {
-          next(error);
-        }
-      }),
+        return res.status(HttpStatusCode.OK).json({
+          status: 200,
+          mode: 1,
+        });
+      } catch (error) {
+        next(error);
+      }
+    }),
 
       this._router.get("/comments/views", async (
         req: express.Request,
@@ -66,6 +66,16 @@ class ApiRouter extends BaseRouter {
           next(error);
         }
       })
+
+    this._router.get(
+      "/reviews/views",
+      async (
+        req: express.Request,
+        res: express.Response,
+        next: express.NextFunction
+      ) => res.status(HttpStatusCode.OK).json({
+        reviews: null
+      }))
   }
 }
 
