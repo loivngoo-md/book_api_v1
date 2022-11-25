@@ -1,0 +1,1 @@
+{"version":3,"file":"LibrarySchema.js","sourceRoot":"","sources":["../../../src/dataAccess/schemas/LibrarySchema.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;AAAA,mDAAqC;AAIrC,MAAM,aAAa,GAAoB,IAAI,QAAQ,CAAC,MAAM,CAAW;IACjE,EAAE,EAAE,EAAE,IAAI,EAAE,MAAM,EAAE;IAEpB,OAAO,EAAE,EAAE,IAAI,EAAE,MAAM,EAAE;IAEzB,OAAO,EAAE,EAAE,IAAI,EAAE,MAAM,EAAE;CAE5B,CAAC,CAAC;AAGM,sCAAa"}
