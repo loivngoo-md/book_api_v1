@@ -17,7 +17,30 @@ class TimeKeepingRouter extends BaseRouter {
       authenticator.authenticate,
       this.controller.getMyDetails
     );
+
+    this._router.patch(
+      "/create",
+      this.controller.create
+    );
+
+    this._router.post(
+      "/update",
+      this.controller.update
+    );
+
+    this._router.get(
+      "/view/:id",
+      this.controller.view
+    );
+
+    this._router.get(
+      "/get",
+      this.controller.get
+    );
+
   }
+
+
 }
 
 Object.seal(TimeKeepingRouter);

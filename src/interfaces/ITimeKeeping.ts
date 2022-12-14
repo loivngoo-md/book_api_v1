@@ -8,6 +8,6 @@ export interface ITimeKeeping extends IBase {
 
   production: boolean;
 
-  value: string;
+  value: string | null;
 
 }

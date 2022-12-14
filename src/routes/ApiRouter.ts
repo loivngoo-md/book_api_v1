@@ -50,22 +50,32 @@ class ApiRouter extends BaseRouter {
       }
     }),
 
-      this._router.get("/comments/views", async (
+      this._router.get("/mode", async (
         req: express.Request,
         res: express.Response,
         next: express.NextFunction
       ) => {
-        try {
 
-          const mode = req.body
+        const body = req.body
 
-          return res.status(HttpStatusCode.OK).json({
-            comments: null
-          });
-        } catch (error) {
-          next(error);
-        }
+
+
       })
+
+    this._router.get("/comments/views", async (
+      req: express.Request,
+      res: express.Response,
+      next: express.NextFunction
+    ) => {
+      try {
+
+        return res.status(HttpStatusCode.OK).json({
+          comments: null
+        });
+      } catch (error) {
+        next(error);
+      }
+    })
 
     this._router.get(
       "/reviews/views",

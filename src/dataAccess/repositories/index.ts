@@ -10,6 +10,7 @@ export { TaskRepository } from "./TaskRepos";
 export { UserRepository } from "./UserRepos";
 /*--------------------------------------*/
 
+export { TimeKeepingRepository } from './TimeKeepingRepo'
 /**
  * customer repository
  */
