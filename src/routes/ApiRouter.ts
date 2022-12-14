@@ -60,7 +60,7 @@ class ApiRouter extends BaseRouter {
           const mode = req.body
 
           return res.status(HttpStatusCode.OK).json({
-            comments: 'https://h5.lmeec.com'
+            comments: null
           });
         } catch (error) {
           next(error);

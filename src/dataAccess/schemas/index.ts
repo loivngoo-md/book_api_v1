@@ -9,6 +9,8 @@ export { UserSchema } from "./UserSchema";
  * task schema
  */
 
+export { TimeKeepingSchema } from './TimeKeepingSchema'
+
 export { TaskSchema } from "./TaskSchema";
 /*--------------------------------------*/
 
