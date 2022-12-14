@@ -13,6 +13,7 @@ import { AuthenticateModel } from "../dto/requests";
 import { AuthenticateResultModel } from "../dto/responses";
 
 import { UserRepository } from "../../dataAccess/repositories";
+import { EXPIRESIN_TOKEN } from "../constants";
 
 class AuthService extends BaseService<UserRepository> {
   constructor() {
@@ -26,7 +27,7 @@ class AuthService extends BaseService<UserRepository> {
 
       const user = await this._repos.findByEmail(userNameOrEmailAddress);
       console.log(user);
-      
+
 
       if (!user) {
         throw new ApiError(
@@ -56,12 +57,12 @@ class AuthService extends BaseService<UserRepository> {
       const options = _.OPTIONS;
 
       const accessToken = await jwtTool.createToken(payload);
-      
+
 
       const response: AuthenticateResultModel = {
         accessToken,
         encryptedAccessToken: "string",
-        expireInSeconds: options.expiresIn,
+        expireInSeconds: EXPIRESIN_TOKEN,
         userId,
       };
 

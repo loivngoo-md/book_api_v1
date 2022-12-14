@@ -10,6 +10,8 @@ export const ACTIVE_PROJECT: number = 0;
 
 export const INACTIVE_PROJECT: number = 1;
 
+export const EXPIRESIN_TOKEN = 3600;
+
 export const CONFIGURATION_WORKING_TIME = {
   "0": {
     morningStartAt: "08:30",
